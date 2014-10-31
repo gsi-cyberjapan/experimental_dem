@@ -9,10 +9,12 @@ experimental_dem
 
 ## 基盤地図情報（数値標高モデル）5mメッシュ（航空レーザ測量）（DEM5A、高さ精度0.3m）
 テンプレート URL: http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson
+
 サンプル：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/18/233094/102736.geojson
 
 ## 基盤地図情報（数値標高モデル）10mメッシュ（地形図の等高線）（DEM10B、高さ精度5m）
 テンプレートURL：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson
+
 サンプル：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/18/233094/102736.geojson
 
 # データ内容の詳細について
