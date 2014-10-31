@@ -48,7 +48,7 @@ var std = L.tileLayer(
 var dem10b = new L.TileLayer.GeoJSON(
   'http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson', {
     minZoom: 18, maxNativeZoom: 18, maxZoom: 24, 
-    attribution: '基盤地図情報（数値標高モデル）（10mメッシュ（標高））'
+    attribution: '基盤地図情報（数値標高モデル）10mメッシュ（地形図の等高線）'
   }, {
     pointToLayer: function(feat, latlng) {
       return L.marker(latlng, {
@@ -74,7 +74,7 @@ var dem10b = new L.TileLayer.GeoJSON(
 var dem5a = new L.TileLayer.GeoJSON(
   'http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson', {
     minZoom: 19, maxNativeZoom: 18, maxZoom: 24, 
-    attribution: '基盤地図情報（数値標高モデル）（5mメッシュ（標高））'
+    attribution: '基盤地図情報（数値標高モデル）5mメッシュ（航空レーザ測量）'
   }, {
     pointToLayer: function(feat, latlng) {
       return L.marker(latlng, {
@@ -104,8 +104,8 @@ map = L.map('mapdiv', {
 var hash = L.hash(map);
 L.control.layers({}, {
   '地理院タイル（標準地図）': std,
-  '基盤地図情報（数値標高モデル）（10mメッシュ（標高））': dem10b,
-  '基盤地図情報（数値標高モデル）（5mメッシュ（標高））': dem5a,
+  '基盤地図情報（数値標高モデル）10mメッシュ（地形図の等高線）': dem10b,
+  '基盤地図情報（数値標高モデル）5mメッシュ（航空レーザ測量）': dem5a,
 }).addTo(map);
 
 corslite('./area.geojson', function(err, resp) {
