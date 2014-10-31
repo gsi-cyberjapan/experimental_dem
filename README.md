@@ -21,8 +21,8 @@ experimental_dem
 データの内容の詳細については、
 基盤地図情報（数値標高モデル）の種類と概要（http://fgd.gsi.go.jp/download/DEMkind.htm ）や基盤地図情報 ダウンロードデータ　ファイル仕様書4.0　(1,138KB　PDFファイル)（http://fgd.gsi.go.jp/otherdata/spec/2014/FGD_DLFileSpecV4.0.pdf ）をご覧ください。
 
-# テストサイトについて
-テストサイトを次の場所に用意しております。
+# デモサイトについて
+デモサイトを次の場所に用意しております。
 http://gsi-cyberjapan.github.io/experimental_dem/
 
 ズームレベル18以上でDEM10Bのデータを赤文字で、ズームレベル19以上でDEM5Aデータを
