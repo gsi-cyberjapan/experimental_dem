@@ -45,6 +45,10 @@ var std = L.tileLayer(
   'http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
     maxZoom: 24, maxNativeZoom: 18,
     attribution: '地理院タイル（標準地図）'});
+var ort = L.tileLayer(
+  'http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.jpg', {
+    maxZoom: 24, maxNativeZoom: 18,
+    attribution: '地理院タイル（写真）'});
 var dem10b = new L.TileLayer.GeoJSON(
   'http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson', {
     minZoom: 18, maxNativeZoom: 18, maxZoom: 24, 
@@ -99,10 +103,11 @@ var dem5a = new L.TileLayer.GeoJSON(
 
 map = L.map('mapdiv', {
   center: [36.22545, 140.10670], zoom: 20,
-  layers: [std, dem10b, dem5a]});
+  layers: [ort, dem10b, dem5a]});
 
 var hash = L.hash(map);
 L.control.layers({}, {
+  '地理院タイル（写真）': ort,
   '地理院タイル（標準地図）': std,
   '基盤地図情報（数値標高モデル）10mメッシュ（地形図の等高線）': dem10b,
   '基盤地図情報（数値標高モデル）5mメッシュ（航空レーザ測量）': dem5a,
