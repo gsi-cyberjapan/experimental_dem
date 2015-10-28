@@ -58,7 +58,7 @@ var dem10b = new L.TileLayer.GeoJSON(
       return L.marker(latlng, {
         icon: L.divIcon({
           html: '<div class="data dem10b">' + 
-            feat.properties.height.toFixed(2) + '</div>',
+            feat.properties.alti.toFixed(2) + '</div>',
           className: null, iconSize: null
         })
       });
@@ -67,7 +67,7 @@ var dem10b = new L.TileLayer.GeoJSON(
       var popupString = '<div class="popup">';
       for (var k in feat.properties) {
         var v = feat.properties[k];
-        if(k == 'height') {v = v.toFixed(2);}
+        if(k == 'alti') {v = v.toFixed(2);}
         popupString += k + ': ' + v + '<br />';
       }
       popupString += '</div>';
