@@ -120,7 +120,7 @@ canvas.drawTile = function(canvas, tilePoint, zoom) {
 
 map = L.map('mapdiv', {
   center: [36.10306, 140.08967], zoom: 20,
-  layers: [std,dem5a,dem10b]});
+  layers: [std,dem5a,dem10b,dem5a_mesh]});
 
 var hash = L.hash(map);
 L.control.layers({}, {
