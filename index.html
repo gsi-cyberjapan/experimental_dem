@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>地理院ベクトルタイル提供実験（基盤地図情報（数値標高モデル））</title>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.3/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
 <script src="./leaflet-hash.js"></script>
 <script src="./TileLayer.GeoJSON.js"></script>
 <style>
@@ -41,15 +41,15 @@ html, body, #mapdiv {height: 100%; width: 100%;}
 <div id="mapdiv">
 <script>
 var std = L.tileLayer(
-  'http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+  'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
     maxZoom: 24, maxNativeZoom: 18,
     attribution: '地理院タイル（標準地図）'});
 var ort = L.tileLayer(
-  'http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg', {
+  'https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg', {
     maxZoom: 24, maxNativeZoom: 18,
     attribution: '地理院タイル（写真）'});
 var dem10b = new L.TileLayer.GeoJSON(
-  'http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson', {
+  'https://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson', {
     minZoom: 18, maxNativeZoom: 18, maxZoom: 24, 
     attribution: '10mDEM（地形図の等高線）'
   }, {
@@ -75,7 +75,7 @@ var dem10b = new L.TileLayer.GeoJSON(
   });
 
 var dem5a = new L.TileLayer.GeoJSON(
-  'http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson', {
+  'https://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson', {
     minZoom: 19, maxNativeZoom: 18, maxZoom: 24, 
     attribution: '5mDEM（航空レーザ測量）'
   }, {
@@ -100,11 +100,6 @@ var dem5a = new L.TileLayer.GeoJSON(
     }
   });
 
-var dem5a_mesh = L.tileLayer(
-  'http://cyberjapandata.gsi.go.jp/xyz/KIBANCHIZU/5m_laser/{z}/{x}/{y}.png', {
-    maxZoom: 19,maxNativeZoom: 14,
-    attribution: '5mDEM（航空レーザ測量）概ねの範囲'});
-
 var canvas = L.tileLayer.canvas();
 canvas.drawTile = function(canvas, tilePoint, zoom) {
   var ctx = canvas.getContext('2d');
@@ -116,19 +111,16 @@ canvas.drawTile = function(canvas, tilePoint, zoom) {
   ctx.fillText(zoom + '/' + tilePoint.x + '/' + tilePoint.y, 128, 128);
 }
 
-
-
 map = L.map('mapdiv', {
   center: [36.10306, 140.08967], zoom: 20,
-  layers: [std,dem5a,dem10b,dem5a_mesh]});
+  layers: [std,dem5a,dem10b]});
 
 var hash = L.hash(map);
 L.control.layers({}, {
-  '地理院タイル（写真）': ort,
   '地理院タイル（標準地図）': std,
-  '10mDEM（地形図の等高線）': dem10b,
+  '地理院タイル（写真）': ort,
   '5mDEM（航空レーザ測量）': dem5a,
-  '5mDEM（航空レーザ測量）概ねの範囲': dem5a_mesh,
+  '10mDEM（地形図の等高線）': dem10b,
   'タイル座標':canvas
 },{position:'topright',collapsed:false}).addTo(map);
 
