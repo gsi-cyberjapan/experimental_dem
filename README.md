@@ -8,14 +8,14 @@ experimental_dem
 それぞれのデータの仕様は次のとおりです。
 
 ## 基盤地図情報（数値標高モデル）5mメッシュ（航空レーザ測量）（DEM5A、高さ精度0.3m）
-テンプレート URL: http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson
+テンプレート URL: https://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/{z}/{x}/{y}.geojson
 
-サンプル：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/18/233094/102736.geojson
+サンプル：https://cyberjapandata.gsi.go.jp/xyz/experimental_dem5a/18/233094/102736.geojson
 
 ## 基盤地図情報（数値標高モデル）10mメッシュ（地形図の等高線）（DEM10B、高さ精度5m）
-テンプレートURL：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson
+テンプレートURL：https://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/{z}/{x}/{y}.geojson
 
-サンプル：http://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/18/233094/102736.geojson
+サンプル：https://cyberjapandata.gsi.go.jp/xyz/experimental_dem10b/18/233094/102736.geojson
 
 # データ内容の詳細について
 データの内容の詳細については、
@@ -24,12 +24,12 @@ experimental_dem
 # デモサイトについて
 デモサイトを次の場所に用意しております。
 - 本リポジトリ(DEM5A、DEM10B)
-http://gsi-cyberjapan.github.io/experimental_dem/
+https://gsi-cyberjapan.github.io/experimental_dem/
 
 ズームレベル18以上でDEM10Bのデータを赤文字で、ズームレベル19以上でDEM5Aデータを
 青文字で表示します。文字列の中央がメッシュ中心点（サンプリング点）となります。
 - 地理院地図(DEM10B)
-http://maps.gsi.go.jp/?ll=36.225856,140.099362&z=18&base=std&ls=experimental_dem10b&disp=1&cd=f4&vs=c1j0l0u0&d=l
+https://maps.gsi.go.jp/#18/36.225879/140.099335/&base=std&ls=std%7Cexperimental_dem10b&disp=11&vs=c1j0l0u0t0z0r0f0&d=l
 
 
 # 提供の位置づけ
